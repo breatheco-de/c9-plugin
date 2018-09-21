@@ -1,0 +1,40 @@
+#!/bin/bash
+if [ ! "$BC_C9_AUTOEXEC" = 3  ]; then
+    export BC_C9_NAME="breathecode/scripts"
+    export BC_C9_LIBRARY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    export BC_C9_WORKSPACE="$HOME/workspace"
+
+    export PATH="$PATH:$BC_C9_LIBRARY/bash"
+
+    # https://unix.stackexchange.com/questions/48381/fixing-scrolling-in-nano-running-in-tmux-in-mate-terminal
+    export TERM=screen
+
+    # Increment this number each time you change something inside of this 'if'-block
+    export BC_C9_AUTOEXEC=3
+    
+    echo "$BC_C9_NAME: BreatheCode Plugin #$BC_C9_AUTOEXEC"
+    
+    source ~/.nvm/nvm.sh
+    read version _ <<< $(nvm current)
+    if [[ "$version" == *"v6"* ]]; then
+        nvm i 8
+        nvm alias default 8
+        echo "$BC_C9_NAME: Node was upgraded to version 8"
+    fi
+
+    # Path to .pyenv
+    if [ -d ~/.pyenv ]; then
+        export PATH="/home/ubuntu/.pyenv/bin:$PATH"
+        eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
+    fi
+fi
+
+# Functions
+pathContainsDirectory() { if [[ ":$PATH:" == *":$1:"* ]]; then return 0; else return 1; fi }
+randomStringAlphaNum() { cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c ${1:-32}; }
+
+# ~/workspace/bin
+if [ -d "$HOME/workspace/bin" ] && ! pathContainsDirectory "$HOME/workspace/bin"; then
+    export PATH="$PATH:$HOME/workspace/bin"
+fi

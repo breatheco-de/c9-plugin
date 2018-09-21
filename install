@@ -1,0 +1,51 @@
+#!/bin/bash
+. "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/autoexec" || exit 1
+
+EXTENSION=". \"$BC_C9_LIBRARY/autoexec\""
+
+BASHRC_FILEPATH="$HOME/.bashrc"
+if grep -r "^$EXTENSION$" "$BASHRC_FILEPATH" > /dev/null; then
+    echo "$BC_C9_NAME: install: info: ~/.bashrc extension already installed. skipping."
+else
+    echo "$EXTENSION" >> "$BASHRC_FILEPATH"
+    INSTALLED=1
+    chmod +x -R $BC_C9_LIBRARY/utils
+fi
+
+PROFILE_FILEPATH="$HOME/.profile"
+if grep -r "^$EXTENSION$" "$PROFILE_FILEPATH" > /dev/null; then
+    echo "$BC_C9_NAME: install: info: ~/.profile extension already installed. skipping."
+else
+    echo "$EXTENSION" >> "$PROFILE_FILEPATH"
+    INSTALLED=1
+fi
+
+if diff "$BC_C9_LIBRARY/assets/gitignore" "$HOME/.gitignore" > /dev/null; then
+    echo "$BC_C9_NAME: install: info: ~/.gitignore replacement already installed. skipping."
+else
+    cp "$BC_C9_LIBRARY/assets/gitignore" "$HOME/.gitignore"
+    INSTALLED=1
+fi
+
+
+if [ -d ~/.pyenv ]; 
+    then 
+    echo "$BC_C9_NAME: pyenv already installed. skipping."
+    else
+    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    echo "$BC_C9_NAME: installing pyenv"
+fi
+
+
+if git config core.filemode; then
+    git config core.filemode false
+    git config --global core.fileMode false
+    echo "Removing git fileMode check"
+    INSTALLED=1
+else
+    echo "$BC_C9_NAME: git config core.filemode was already false. skipping."
+fi
+
+if ! [ -z "$INSTALLED" ]; then
+    printf "Installation finished.\nRun \"source \"$BC_C9_LIBRARY/autoexec\"\" or start a new terminal.\n"
+fi
