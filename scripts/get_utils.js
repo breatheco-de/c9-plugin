@@ -8,7 +8,7 @@ return (services, plugin) => new Promise(function(resolve, reject){
                     if(plugin['breathecode'].debug) console.error(err);
                     services['dialog.error'].show("Error",err);
                 },
-                info: (msg=null) => {
+                success: (msg=null) => {
                     if(!msg) msg = 'Unspecified error';
                     if(plugin['breathecode'].debug) console.log(msg);
                     services['dialog.alert'].show("Success",msg);
