@@ -76,7 +76,7 @@ return (services, plugin) => new Promise(function(resolve, reject){
             plugin['breathecode'].log( 'doUpgradeCallback');
             if (err) return _private.onError( err);
             
-            plugin['breathecode'].notify.success("The BreatheCode Plugin has been updated successfully to v"+plugin['breathecode'].version);
+            plugin['breathecode'].notify().success("The BreatheCode Plugin has been updated successfully to v"+plugin['breathecode'].version);
             _private.doInstall();
         },
         doInstall: function() {
