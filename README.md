@@ -6,10 +6,8 @@
     <h2 align="center"> Cloud 9 (C9) Plugin/Extension for BreatheCode Users </h2>
 </p>
 
-[![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://GitHub.com/breatheco-de/react-session.js/graphs/commit-activity)
-[![npm](https://img.shields.io/npm/v/bc-react-session.svg)](https://www.npmjs.com/package/bc-react-session)
-[![npm](https://img.shields.io/npm/dm/bc-react-session.svg)](https://www.npmjs.com/package/bc-react-session)
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/breatheco-de/react-session/blob/master/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/breatheco-de/c9-plugin/commits/master)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/breatheco-de/c9-plugin/blob/master/LICENSE)
 
 All of Breathe Code's functionality inside the C9 Coding Editor.
 
