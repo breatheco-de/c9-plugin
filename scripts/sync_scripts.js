@@ -68,7 +68,7 @@ return (services, plugin) => new Promise(function(resolve, reject){
                 const version = plugin['breathecode'].version || null;
                 if(!version) _private.doUpgradeCallback(err);
                 else services.proc.execFile('git', {
-                    args: ['checkout tags/'+version], cwd: plugin['breathecode'].absPath
+                    args: ['checkout','tags/'+version], cwd: plugin['breathecode'].absPath
                 }, (err) => _private.doUpgradeCallback(err));
             });
         },
