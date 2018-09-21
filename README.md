@@ -1,9 +1,12 @@
-# Cloud 9 (C9) Extension for BreatheCode Users
+# Cloud 9 (C9) Plugin/Extension for BreatheCode Users
 
 All of Breathe Code's functionality inside the C9 Coding Editor.
 
 ## Installation
 
-Please copy the content of the init.js script and paste inside the Cloud9 -> "Open Your Init Script" file.
-
-![Animated Installation Tutorial](https://breatheco-de.github.io/c9-scripts/assets/installation.gif "Animated Installation Tutorial")
+1. Using your command line, download the initialization script:
+```sh
+$ wget https://raw.githubusercontent.com/breatheco-de/c9-plugin/master/init.js
+```
+2. Copy the content of the downloaded file `init.js` inside your Cloud 9 `init script`.
+3. Press `control + enter` to apply the changes to Cloud 9.
