@@ -9,7 +9,7 @@ if grep -r "^$EXTENSION$" "$BASHRC_FILEPATH" > /dev/null; then
 else
     echo "$EXTENSION" >> "$BASHRC_FILEPATH"
     INSTALLED=1
-    chmod +x -R $BC_C9_LIBRARY/utils
+    chmod +x -R $BC_C9_LIBRARY/bash
 fi
 
 PROFILE_FILEPATH="$HOME/.profile"
