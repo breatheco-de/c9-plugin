@@ -12,3 +12,5 @@ You will find a new file in your workspace root with the name `init.js`.
 
 2. Copy the content of the downloaded file `init.js` inside your Cloud 9 `init script`.
 3. Press `control + enter` to apply the changes to Cloud 9.
+
+![Animated Installation Tutorial](https://breatheco-de.github.io/c9-scripts/assets/installation.gif "Animated Installation Tutorial")
