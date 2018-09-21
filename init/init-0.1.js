@@ -3,8 +3,8 @@
     version: '0.1',
     remote: 'https://github.com/breatheco-de/c9-plugin.git',
     absPath: '/home/ubuntu/c9-plugin',
-    relativePath: '~/workspace/c9-plugin',
-    debug: true,
+    relativePath: '~/c9-plugin',
+    debug: false,
     log: function(elm){ if(this.debug) console.log(elm) },
     init: function() {
         this.log('initializing...');
