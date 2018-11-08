@@ -38,15 +38,21 @@ return (services, plugin) => new Promise(function(resolve, reject){
                     }
                 },
                 {
-                    path: "/react-flux",
+                    path: "/react-webapp",
                     actions: {
-                        onclick: () => plugin['breathecode'].openTab('https://github.com/4GeeksAcademy/react-hello-flux')
+                        onclick: () => plugin['breathecode'].openTab('https://github.com/4GeeksAcademy/react-hello-webapp')
                     }
                 },
                 {
                     path: "/django-rest",
                     actions: {
                         onclick: () => plugin['breathecode'].openTab('https://github.com/4GeeksAcademy/django-rest-hello')
+                    }
+                },
+                {
+                    path: "/wordpress",
+                    actions: {
+                        onclick: () => plugin['breathecode'].openTab('https://github.com/4GeeksAcademy/wordpress-hello')
                     }
                 }
             ]
