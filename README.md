@@ -24,3 +24,14 @@ $ wget https://raw.githubusercontent.com/breatheco-de/c9-plugin/master/init.js
 3. Press `control + enter` to apply the changes to Cloud 9.
 
 ![Animated Installation Tutorial](https://raw.githubusercontent.com/breatheco-de/c9-plugin/master/assets/install.gif "Animated Installation Tutorial")
+
+## What does this plugin do?
+
+- It ads a menu on the top called "BreatheCode" with shortcuts to boilerplates and other interesting stuff for the students.
+- It will install node v8 and keep it that way.
+- It installs pyenv, that way you have access to last version of python.
+- It makes vailable lots of bash scripts that will make your life easier: Installing MySQL, Installing Postgree, Installing PHP 6, etc. Here is the full [here is the full list of bash scripts](https://github.com/breatheco-de/c9-plugin/tree/master/bash)
+
+### For the future
+
+- We plan to start collecting data from your console errors, etc. The idea is to know more about you and how can we help you, this is not implemented yet and we would ask for your permision once we do it.
